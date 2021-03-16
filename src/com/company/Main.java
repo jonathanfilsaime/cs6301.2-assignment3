@@ -17,15 +17,10 @@ public class Main {
     public static boolean found = false;
 
     public static void main(String[] args) throws IOException {
-	// write your code here
-
         readFile("task4.in");
         initialSize = knowledgeBase.size();
         negateClauses();
         resolution();
-        System.out.println("------------------------------------------");
-        System.out.println("------------------------------------------");
-        System.out.println("------------------------------------------");
         knowledgeBase.forEach((c,p) -> System.out.println(c + "-" +p));
     }
 
@@ -151,6 +146,7 @@ public class Main {
     }
 
     public static List<String> createNewLiteral(List<String> clause, int key, int inferredKey, int index) {
+
         List<String> indexToBeRemoved = new ArrayList<>();
         indexToBeRemoved.add(clause.get(index));
         for (int i = 0; i < clause.size(); i++) {
@@ -159,7 +155,8 @@ public class Main {
             }
         }
         clause.removeAll(indexToBeRemoved);
-        clause.add("{"+ key + ","+ inferredKey +"}");
-        return clause;
+        List<String> brandNewClause = new ArrayList<>(clause);
+        brandNewClause.add("{"+ key + ","+ inferredKey +"}");
+        return brandNewClause;
     }
 }
