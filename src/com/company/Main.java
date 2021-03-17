@@ -17,7 +17,7 @@ public class Main {
     public static boolean found = false;
 
     public static void main(String[] args) throws IOException {
-        readFile("task4.in");
+        readFile("/Users/jonathanfils-aime/Documents/codebase/cs6301.2-assignment3/task4.in");
         initialSize = knowledgeBase.size();
         negateClauses();
         resolution();
@@ -147,15 +147,16 @@ public class Main {
 
     public static List<String> createNewLiteral(List<String> clause, int key, int inferredKey, int index) {
 
+        List<String> copyClause = new ArrayList<>(clause);
         List<String> indexToBeRemoved = new ArrayList<>();
-        indexToBeRemoved.add(clause.get(index));
+        indexToBeRemoved.add(copyClause.get(index));
         for (int i = 0; i < clause.size(); i++) {
             if (clause.get(i).substring(0,1).equalsIgnoreCase("{")) {
-                indexToBeRemoved.add(clause.get(i));
+                indexToBeRemoved.add(copyClause.get(i));
             }
         }
-        clause.removeAll(indexToBeRemoved);
-        List<String> brandNewClause = new ArrayList<>(clause);
+        copyClause.removeAll(indexToBeRemoved);
+        List<String> brandNewClause = new ArrayList<>(copyClause);
         brandNewClause.add("{"+ key + ","+ inferredKey +"}");
         return brandNewClause;
     }
