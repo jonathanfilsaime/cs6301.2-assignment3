@@ -17,11 +17,17 @@ public class Main {
     public static boolean found = false;
 
     public static void main(String[] args) throws IOException {
-        readFile("/Users/jonathanfils-aime/Documents/codebase/cs6301.2-assignment3/task4.in");
+        readFile(args[0]);
         initialSize = knowledgeBase.size();
         negateClauses();
         resolution();
-        knowledgeBase.forEach((c,p) -> System.out.println(c + "-" +p));
+        knowledgeBase.forEach((c,p) -> {
+                    String theString = p.toString();
+                    theString = theString.replaceAll("\\[", "");
+                    theString = theString.replaceAll("\\]", "");
+                    System.out.println(c + ". " + theString);
+                });
+        System.out.println("Size of final clause set: " + (knowledgeBase.size() - 1));
     }
 
 
