@@ -17,7 +17,16 @@ public class Main {
     public static boolean found = false;
 
     public static void main(String[] args) throws IOException {
-        readFile(args[0]);
+
+        if (args.length == 1) {
+            readFile(args[0]);
+        }
+
+        if(args.length == 2) {
+            readFile(args[0]);
+            readFile(args[1]);
+        }
+
         initialSize = knowledgeBase.size();
         negateClauses();
         resolution();
