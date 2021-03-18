@@ -1,0 +1,36 @@
+0. ~NoLeakH1, ~NoLeakH2, NoLeak, {}
+1. ~okH1, NoLeakH1, {}
+2. okH1, V, ~l, NoLeakH1, {}
+3. ~okH2, NoLeakH2, {}
+4. okH2, V, ~2, NoLeakH2, {}
+5. ~okH2, {}
+6. okH1, {}
+7. ~V, 2, {}
+8. NoLeakH1, {}
+9. NoLeakH2, {}
+10. ~NoLeak, {}
+11. okH1, {}
+12. ~NoLeakH1, {}
+13. ~okH1, {}
+14. ~V, {}
+15. l, {}
+16. ~NoLeakH1, {}
+17. okH2, {}
+18. ~NoLeakH2, {}
+19. ~okH2, {}
+20. ~V, {}
+21. 2, {}
+22. ~NoLeakH2, {}
+23. okH2, {}
+24. ~okH1, {}
+25. V, {}
+26. ~2, {}
+27. ~NoLeakH2, NoLeak, {0,8}
+28. ~NoLeakH1, NoLeak, {0,9}
+29. ~NoLeakH1, ~NoLeakH2, {0,10}
+30. NoLeakH1, {1,11}
+31. ~okH1, {1,12}
+32. okH1, V, ~l, {2,12}
+33. V, ~l, NoLeakH1, {2,13}
+34. false, {6,13}
+Size of final clause set: 34

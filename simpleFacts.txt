@@ -1,0 +1,8 @@
+~NoLeakH1 ~NoLeakH2 NoLeak
+~okH1 NoLeakH1
+okH1 V ~l NoLeakH1
+~okH2 NoLeakH2
+okH2 V ~2 NoLeakH2
+~okH2
+okH1
+~V 2
